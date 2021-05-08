@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <fieldset style="width: 800px; color: red; background-color: chartreuse; border-color: brown;">
+    <legend>Convert Money</legend>
+    <table>
+      <tr>
+        <td>Money: </td>
+        <td><input type="number" min="1" id="money" onchange="convertMoney()"></td>
+      </tr>
+      <tr>
+        <td>From: </td>
+
+        <td><select id="from">
+          <option value="23000">Việt Nam đồng</option>
+          <option value="1">Dollar</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td>To: </td>
+        <td><select id="to">
+          <option value="1">Dollar</option>
+          <option value="23000">Việt Nam đồng</option>
+        </select></td>
+      </tr>
+    </table>
+    <button onclick="convertMoney()">Convert</button>
+    <h2>Result: <p id="result"></p></h2>
+  </fieldset>
+
+<script>
+  function convertMoney() {
+      let money = document.getElementById("money").value
+      let from = document.getElementById("from").value
+      let to = document.getElementById("to").value
+      result = money * to / from
+      document.getElementById("result").innerHTML = result
+  }
+</script>
+</body>
+</html>
